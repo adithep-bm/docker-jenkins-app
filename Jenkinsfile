@@ -13,12 +13,12 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                sh 'docker build -t jenkins-demo-app:latest .'
+                sh 'docker build -t docker-jenkins-app:latest .'
             }
         }
         stage('Run Container') {
             steps {
-                sh 'docker run -d -p 5000:5000 --name demo-app jenkins-demo-app:latest'
+                sh 'docker run -d -p 5000:5000 --name demo-app docker-jenkins-app:latest'
             }
         }
     }
