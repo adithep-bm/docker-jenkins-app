@@ -14,7 +14,7 @@ pipeline {
         stage('Run Container') {
             steps {
                 sh 'docker rm -f demo-app || true'
-                sh 'docker run -d -p 5000:5000 --name demo-app docker-jenkins-app:latest'
+                sh 'docker run -d -p 8081:8081 --name demo-app docker-jenkins-app:latest'
             }
         }
     }
